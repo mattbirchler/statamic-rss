@@ -1,0 +1,24 @@
+<rss version="2.0">
+   <channel>
+      <title><![CDATA[XXXXXXXXXXXXX]]></title>
+      <link>{{ _site_url }}</link>
+      <description>XXXXXXXXXXXXX</description>
+      <lastBuildDate>{{ entries:listing folder="blog" limit="1" }}{{ datestamp format="r" }}{{ /entries:listing }}</lastBuildDate>
+      <language>en-us</language>
+      <webMaster>XXXXXXXXXXXXX@gmail.com (XXXXXXXXXXXXX)</webMaster>
+      <copyright>Copyright {{ current_date format='Y' }}</copyright>
+      <ttl>3600</ttl>
+
+      {{ entries:listing folder="blog" limit="20" }}
+         <item>
+         <title><![CDATA[{{ title }}]]></title>
+         <author>{{ author }}</author>
+         <link>{{ permalink }}</link>
+         <guid>{{ permalink }}</guid>
+         <category>post</category>
+         <pubDate>{{ datestamp format="r" }}</pubDate>
+         <description><![CDATA[{{ content|widont }}]]></description>
+         </item>
+      {{ /entries:listing }}
+   </channel>
+</rss>
